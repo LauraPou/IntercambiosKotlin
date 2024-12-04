@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             val username = usuario.text.toString()
             val password = contrasena.text.toString()
 
-            if (username == "pou" && password == "teamomiamorpreciosa" || (username == correoRegistrado && password == passwordRegistrado )) {
+            if (username == "pou" && password == "1234" || (username == correoRegistrado && password == passwordRegistrado )) {
                 Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
 
                 val intent = Intent(this, PaginaInicio::class.java)
