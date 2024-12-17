@@ -1,98 +1,128 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IntercambiosParticipantes">
+    tools:context=".MainActivity">
+
+        <!-- Contenido principal -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".IngresarIntercambio">
+
+                <!-- Toolbar -->
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/colorPrimary"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:title="Intercambios de regalos"
+                    app:titleTextColor="@android:color/white" />
+
+                <Spinner
+                    android:id="@+id/spinner3"
+                    android:layout_width="349dp"
+                    android:layout_height="43dp"
+                    android:layout_marginStart="31dp"
+                    android:layout_marginEnd="31dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.543" />
+
+                <Button
+                    android:id="@+id/buttonObtenerClave5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Consultar tema del regalo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.525"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.783" />
+
+                <Button
+                    android:id="@+id/buttonObtenerClave3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Consultar participantes que ya aceptaron"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.376" />
+
+                <Button
+                    android:id="@+id/buttonObtenerClave4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Consultar quien me tocó"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.545"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.677" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="210dp"
+                    android:layout_height="54dp"
+                    android:background="#FFFFFFFF"
+                    android:text="Consultar intercambios creados"
+                    android:textAlignment="center"
+                    android:textColor="#FF6750a4"
+                    android:textColorLink="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.164" />
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="210dp"
+                    android:layout_height="54dp"
+                    android:background="#FFFFFFFF"
+                    android:text="Mis intercambios"
+                    android:textAlignment="center"
+                    android:textColor="#FF6750a4"
+                    android:textColorLink="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.164" />
 
 
 
-        <Spinner
-            android:id="@+id/spinner3"
-            android:layout_width="349dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="31dp"
-            android:layout_marginEnd="31dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.543" />
 
-        <Button
-            android:id="@+id/buttonObtenerClave5"
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- NavigationView -->
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigation_view"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Consultar tema del regalo"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.525"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.783" />
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:menu="@menu/navigation_menu"
+            app:headerLayout="@layout/navigation_header" />
 
-        <Button
-            android:id="@+id/buttonObtenerClave3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Consultar participantes que ya aceptaron"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.376" />
-
-        <Button
-            android:id="@+id/buttonObtenerClave4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Consultar quien me tocó"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.545"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.677" />
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="210dp"
-            android:layout_height="54dp"
-            android:background="#FFFFFFFF"
-            android:text="Consultar intercambios creados"
-            android:textAlignment="center"
-            android:textColor="#FF6750a4"
-            android:textColorLink="#FFFFFF"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.164" />
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="210dp"
-            android:layout_height="54dp"
-            android:background="#FFFFFFFF"
-            android:text="Mis intercambios"
-            android:textAlignment="center"
-            android:textColor="#FF6750a4"
-            android:textColorLink="#FFFFFF"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.164" />
-
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
